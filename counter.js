@@ -1,15 +1,9 @@
 function increaseNumber() {
-    let num = Number(document.getElementById("number").innerHTML)
-    let increasedNum = num + 1
-    document.getElementById("number").innerText = increasedNum
-    numberColor()
+    getNumber(1)
 }
 
 function decreaseNumber() {
-    let num = Number(document.getElementById("number").innerText)
-    let decreasedNum = num - 1
-    document.getElementById("number").innerText= decreasedNum
-    numberColor()
+    getNumber(-1)
 }
 
 function reset() {
@@ -29,4 +23,10 @@ function numberColor() {
     else {
         numDiv.style.color = "blue"
     }
+}
+
+function getNumber(increment) {
+    let num = Number(document.getElementById("number").innerText)
+    document.getElementById("number").innerText = num + increment
+    numberColor()
 }
